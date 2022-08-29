@@ -1,0 +1,18 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:daly@localhost:5432/timer"
+}
+
+model timer {
+  id          Int       @id @default(autoincrement())
+  startTime   String 
+  endTime     String
+  createdAt   DateTime @default(now())
+}
